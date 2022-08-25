@@ -36,7 +36,7 @@ public class HardNSoftController {
     @PutMapping ("borrar/hns")
     public ResponseEntity<?> borrarEdu(@RequestBody HardNSoft hns){
   
-            hnsRepo.delete(hns);
+            hnsRepo.deleteAll();
             return ResponseEntity.ok().body("");
     }
     
