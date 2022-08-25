@@ -29,12 +29,14 @@ public class HardNSoftController {
         HardNSoft hardNSoft = hnsRepo.findBySkill(hns.getSkill());
         if(hardNSoft.getSkill() == null){
             hnsRepo.save(hns);
+            return ResponseEntity.ok().body("");
         }else{
           
             hardNSoft.setPorc(hns.getPorc());
             hnsRepo.save(hardNSoft);
+            return ResponseEntity.badRequest().body("Se modifico");
         }
-        return ResponseEntity.ok().body("");
+        
     }
     
     @PutMapping ("borrar/hns")
@@ -42,9 +44,10 @@ public class HardNSoftController {
         HardNSoft hardNSoft = hnsRepo.findBySkill(hns.getSkill());
         if(hardNSoft.getSkill() != null){
             hnsRepo.delete(hardNSoft);
+            return ResponseEntity.ok().body("");
         }else{
            return ResponseEntity.badRequest().body("no se pudo"); }
-        return ResponseEntity.ok().body("");
+        
     }
     
 }
