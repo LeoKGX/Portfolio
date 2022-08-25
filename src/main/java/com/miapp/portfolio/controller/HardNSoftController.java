@@ -27,11 +27,13 @@ public class HardNSoftController {
     @PostMapping ("/crear/hns")
     public ResponseEntity<?> crearEdu(@RequestBody HardNSoft hns){
         HardNSoft hardNSoft = hnsRepo.findBySkill(hns.getSkill());
-        if(hardNSoft.getSkill() != null){
+        if(hardNSoft.getSkill() == null){
+            hnsRepo.save(hns);
+        }else{
+          
             hardNSoft.setPorc(hns.getPorc());
             hnsRepo.save(hardNSoft);
-        }else{
-            hnsRepo.save(hns);}
+        }
         return ResponseEntity.ok().body("");
     }
     
