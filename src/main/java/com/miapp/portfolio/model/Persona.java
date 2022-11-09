@@ -22,19 +22,10 @@ public class Persona {
     
     private String ocupation;
     private String location;
-    private String mail;
     private String phone;
     private String sobre_mi;
     private String profile_img;
     private String back_img;
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
 
     public String getSobre_mi() {
         return sobre_mi;
