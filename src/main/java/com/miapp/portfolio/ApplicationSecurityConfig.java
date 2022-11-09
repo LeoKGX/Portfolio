@@ -21,6 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
 @EnableWebSecurity
@@ -80,12 +82,24 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
                 cc.addAllowedOrigin("https://intidn-f38c0.web.app");
                 cc.addAllowedOrigin("https://intidn-f38c0.web.app/login");
                 cc.addAllowedOrigin("https://intidn-f38c0.web.app/portfolio");
-                cc.addAllowedOrigin("*");
+                cc.addAllowedOrigin("/*");
                 cc.setMaxAge(Duration.ZERO);
                 cc.setAllowCredentials(Boolean.TRUE);
             UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
             source.registerCorsConfiguration("/**", cc);
             return source;
     }
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+            return new WebMvcConfigurer() {
+                @Override
+                public void addCorsMappings(CorsRegistry registry) {
+                        registry.addMapping("/*")
+                                .allowedOrigins("/*")
+                                .allowedMethods("GET", "POST", "OPTIONS", "PUT","PATCH");
+                                
+                }
 
+        };
+}
 }
