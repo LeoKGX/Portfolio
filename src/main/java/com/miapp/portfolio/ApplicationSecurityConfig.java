@@ -79,6 +79,9 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
                 cc.setAllowedOrigins(Arrays.asList("/*"));
                 cc.setAllowedMethods(Arrays.asList("GET", "POST", "OPTIONS", "PUT","PATCH"));
                 cc.addAllowedOrigin("https://intidn-f38c0.web.app");
+                cc.addAllowedOrigin("https://intidn-f38c0.web.app/login");
+                cc.addAllowedOrigin("https://intidn-f38c0.web.app/portfolio");
+                cc.addAllowedOrigin("*");
                 cc.setMaxAge(Duration.ZERO);
                 cc.setAllowCredentials(Boolean.TRUE);
             UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
