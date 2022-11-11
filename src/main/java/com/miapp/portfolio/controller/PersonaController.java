@@ -42,14 +42,6 @@ public class PersonaController {
         return ResponseEntity.ok().body("");
     }
     
-    @PutMapping ("/update/persona/aboutme")
-    public ResponseEntity<?> updatePersonaAboutMe(@RequestBody editAboutMe aboutme){
-        Persona personaAActualizar = personaRepo.findByMail(aboutme.getMail());
-        personaAActualizar.setSobre_mi(aboutme.getAboutme()); 
-        personaRepo.save(personaAActualizar);
-        
-        return ResponseEntity.ok().body("");
-    }
     
     @PutMapping ("/update/persona/personal")
     public ResponseEntity<?> updatePersonalName(@RequestBody editPersonalInfo persedit){

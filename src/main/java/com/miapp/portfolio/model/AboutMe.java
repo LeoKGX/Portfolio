@@ -2,13 +2,15 @@ package com.miapp.portfolio.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "sobre_mi")
 public class AboutMe {
-    @Id 
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "persona_id")
     private Long id;
     
