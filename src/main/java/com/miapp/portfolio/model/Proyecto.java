@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,12 +20,14 @@ import javax.persistence.Table;
 @Table(name = "proyecto")
 public  class Proyecto implements Serializable{
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-   
     private Long id;
     
     private String name;
     
     private String description;
+    
+    @Column(name = "techs")
+    private String tech;
     
     @ManyToMany (fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
@@ -67,6 +70,14 @@ public  class Proyecto implements Serializable{
 
     public void setTechs(Set<Tech> techs) {
         this.techs = techs;
+    }
+
+    public String getTech() {
+        return tech;
+    }
+
+    public void setTech(String tech) {
+        this.tech = tech;
     }
 
     
