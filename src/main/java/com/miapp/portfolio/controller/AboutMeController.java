@@ -28,7 +28,7 @@ public class AboutMeController {
     @PutMapping ("borrar/acercademi")
     public ResponseEntity<?> borrarAbout(@RequestBody AboutMe about){
             AboutMe aboutABorrar = iAboutMeRepo.findByAbout(about.getAbout());
-            iAboutMeRepo.delete(about);
+            iAboutMeRepo.delete(aboutABorrar);
             
             return ResponseEntity.ok().body("");
     }
