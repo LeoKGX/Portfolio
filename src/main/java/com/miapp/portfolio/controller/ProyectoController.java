@@ -36,19 +36,4 @@ public class ProyectoController {
             return ResponseEntity.ok().body("");
     }
 
-    private static class SimilProye {
-
-        private String nombreproye;
-        public SimilProye() {
-        }
-
-        public String getNombreproye() {
-            return nombreproye;
-        }
-
-        public void setNombreproye(String nombreproye) {
-            this.nombreproye = nombreproye;
-        }
-        
-    }
 }
