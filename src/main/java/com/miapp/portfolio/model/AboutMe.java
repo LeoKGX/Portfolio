@@ -11,7 +11,7 @@ public class AboutMe {
     @Id
     private Long id;
     
-    @Column(name = "aboutme")
+    @Column(name = "sobre_mi")
     private String aboutme;
 
     public AboutMe() {
