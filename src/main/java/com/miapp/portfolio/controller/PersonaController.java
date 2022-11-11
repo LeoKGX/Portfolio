@@ -51,6 +51,26 @@ public class PersonaController {
         return ResponseEntity.ok().body("");
     }
     
+    @PutMapping ("/update/persona/personal")
+    public ResponseEntity<?> updatePersonalName(@RequestBody editPersonalInfo persedit){
+        Persona personaAActualizar = personaRepo.findByMail(persedit.getMail());
+        personaAActualizar.setOcupation(persedit.getOcupation()); 
+        personaAActualizar.setLocation(persedit.getCity()); 
+        personaRepo.save(personaAActualizar);
+        
+        return ResponseEntity.ok().body("");
+    }
+    
+    @PutMapping ("/update/persona/contacto")
+    public ResponseEntity<?> updatePersonEntity(@RequestBody editPersContacto persedit){
+        Persona personaAActualizar = personaRepo.findByMail(persedit.getMail());
+        personaAActualizar.setMail(persedit.getNuevomail()); 
+        personaAActualizar.setPhone(persedit.getNuevotelefono()); 
+        personaRepo.save(personaAActualizar);
+        
+        return ResponseEntity.ok().body("");
+    }
+    
     public static class editFoto {
         private String mail;
         private String imglink;
@@ -103,5 +123,71 @@ public class PersonaController {
         
     }
     
-    
+    public static class editPersonalInfo{
+        private String mail;
+        private String ocupation;
+        private String city;
+
+        public editPersonalInfo() {
+        }
+
+        public String getMail() {
+            return mail;
+        }
+
+        public void setMail(String mail) {
+            this.mail = mail;
+        }
+
+        public String getOcupation() {
+            return ocupation;
+        }
+
+        public void setOcupation(String ocupation) {
+            this.ocupation = ocupation;
+        }
+
+        public String getCity() {
+            return city;
+        }
+
+        public void setCity(String city) {
+            this.city = city;
+        }
+        
+    }
+
+    public static class editPersContacto {
+        private String mail;
+        private String nuevomail;
+        private String nuevotelefono;
+        
+        public editPersContacto() {
+        }
+
+        public String getMail() {
+            return mail;
+        }
+
+        public void setMail(String mail) {
+            this.mail = mail;
+        }
+
+        public String getNuevomail() {
+            return nuevomail;
+        }
+
+        public void setNuevomail(String nuevomail) {
+            this.nuevomail = nuevomail;
+        }
+
+        public String getNuevotelefono() {
+            return nuevotelefono;
+        }
+
+        public void setNuevotelefono(String nuevotelefono) {
+            this.nuevotelefono = nuevotelefono;
+        }
+        
+    }
 }

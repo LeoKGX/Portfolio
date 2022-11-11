@@ -1,10 +1,9 @@
-
 package com.miapp.portfolio.controller;
 
-import com.miapp.portfolio.model.Proyecto;
-import com.miapp.portfolio.repository.IProyectoRepo;
+import com.miapp.portfolio.model.AboutMe;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.miapp.portfolio.repository.IAboutMeRepo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,19 +11,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class ProyectoController {
-    
-    @Autowired IProyectoRepo proRepo;
-    
-    @GetMapping("/proyectos")
-    public List<Proyecto> traerProId(){
-        return proRepo.findAll();
+public class AboutMeController {
+    @Autowired IAboutMeRepo iAboutMeRepo;
+
+    @GetMapping("/aboutme")
+    public List<AboutMe> getAboutMe() {
+        return iAboutMeRepo.findAll();
     }
     
-    @PutMapping ("/crear/proyecto")
-    public ResponseEntity<?> crearXp(@RequestBody Proyecto proyecto){ 
-        proRepo.save(proyecto);
-        
+    @PutMapping("/crear/aboutme")
+    public ResponseEntity<?> crearAboutMe(@RequestBody AboutMe about){
+        iAboutMeRepo.save(about);
         return ResponseEntity.ok().body("");
     }
+    
 }
