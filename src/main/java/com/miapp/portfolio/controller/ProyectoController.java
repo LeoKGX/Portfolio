@@ -28,12 +28,12 @@ public class ProyectoController {
         return ResponseEntity.ok().body("");
     }
     
-    @PutMapping ("/borrar/proyecto")
-    public ResponseEntity<?> borrarPro (@RequestBody SimilProye nombrepro){
-        Proyecto proyectoABorrar = proRepo.findByName(nombrepro.getNombreproye());
-        proRepo.delete(proyectoABorrar);
-        
-        return ResponseEntity.ok().body("");
+    @PutMapping ("borrar/proyecto")
+    public ResponseEntity<?> borrarProye(@RequestBody Proyecto proye){
+            Proyecto proyectoaborrar = proRepo.findByName(proye.getName());
+            proRepo.delete(proyectoaborrar);
+            
+            return ResponseEntity.ok().body("");
     }
 
     private static class SimilProye {
