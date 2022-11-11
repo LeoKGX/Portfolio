@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 public interface IPersonaRepo extends JpaRepository<Persona , Long>{
 
     
-
     public Persona findByMail(String mail);
     
 }

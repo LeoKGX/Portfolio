@@ -15,7 +15,7 @@ public class AboutMe {
     private Long id;
     
     @Column(name = "sobre_mi")
-    private String aboutme;
+    private String about;
 
     public AboutMe() {
     }
@@ -28,22 +28,22 @@ public class AboutMe {
         this.id = id;
     }
 
-    public String getAboutme() {
-        return aboutme;
+    public String getAbout() {
+        return about;
     }
 
-    public void setAboutme(String aboutme) {
-        this.aboutme = aboutme;
+    public void setAbout(String aboutme) {
+        this.about = aboutme;
     }
 
     public AboutMe(String aboutme) {
         this.id = 1L;
-        this.aboutme = aboutme;
+        this.about = aboutme;
     }
 
     public AboutMe(Long id, String aboutme) {
         this.id = id;
-        this.aboutme = aboutme;
+        this.about = aboutme;
     }
     
 }
