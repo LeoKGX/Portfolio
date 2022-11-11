@@ -26,10 +26,27 @@ public class AboutMeController {
     }
     
     @PutMapping("/borrar/acercademi")
-    public ResponseEntity<?> borrarAboutMe(@RequestBody String about){
-        AboutMe aboutABorrar = iAboutMeRepo.findByAboutme(about);
+    public ResponseEntity<?> borrarAboutMe(@RequestBody SimilAboutMe about){
+        AboutMe aboutABorrar = iAboutMeRepo.findByAboutme(about.getAbout());
         iAboutMeRepo.delete(aboutABorrar);
         
         return ResponseEntity.ok().body("");
+    }
+
+    private static class SimilAboutMe {
+
+        private String about;
+        
+        public SimilAboutMe() {
+        }
+
+        public String getAbout() {
+            return about;
+        }
+
+        public void setAbout(String about) {
+            this.about = about;
+        }
+        
     }
 }

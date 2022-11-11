@@ -34,6 +34,7 @@ public class HardNSoftController {
     public ResponseEntity<?> borrarEdu(@RequestBody HardNSoft hns){
             HardNSoft hardnsoft = hnsRepo.findBySkill(hns.getSkill());
             hnsRepo.delete(hardnsoft);
+            
             return ResponseEntity.ok().body("");
     }
     
