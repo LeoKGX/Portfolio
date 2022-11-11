@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "sobre_mi")
 public class AboutMe {
-    @Id
+    @Id 
     @Column(name = "persona_id")
     private Long id;
     
