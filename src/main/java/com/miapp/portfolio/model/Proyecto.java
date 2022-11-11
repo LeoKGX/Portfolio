@@ -2,18 +2,11 @@
 package com.miapp.portfolio.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -29,13 +22,6 @@ public  class Proyecto implements Serializable{
     @Column(name = "techs")
     private String tech;
     
-    @ManyToMany (fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinTable(
-            name = "proyecto_has_tech", 
-            joinColumns = @JoinColumn(name = "proyecto_id", nullable = false),
-            inverseJoinColumns = @JoinColumn(name="tech_id", nullable = false, updatable = false)
-    )
-    private Set<Tech> techs = new HashSet<>();
 
     public Proyecto() {
     }
@@ -62,14 +48,6 @@ public  class Proyecto implements Serializable{
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Set<Tech> getTechs() {
-        return techs;
-    }
-
-    public void setTechs(Set<Tech> techs) {
-        this.techs = techs;
     }
 
     public String getTech() {
