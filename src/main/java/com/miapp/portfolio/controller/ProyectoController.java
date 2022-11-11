@@ -22,7 +22,7 @@ public class ProyectoController {
     }
     
     @PutMapping ("/crear/proyecto")
-    public ResponseEntity<?> crearXp(@RequestBody Proyecto proyecto){ 
+    public ResponseEntity<?> crearPro(@RequestBody Proyecto proyecto){ 
         proRepo.save(proyecto);
         
         return ResponseEntity.ok().body("");

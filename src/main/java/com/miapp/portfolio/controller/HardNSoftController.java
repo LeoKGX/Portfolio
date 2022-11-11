@@ -24,7 +24,6 @@ public class HardNSoftController {
     
     @PostMapping ("/crear/hns")
     public ResponseEntity<?> crearEdu(@RequestBody HardNSoft hns){
- 
 
             hnsRepo.save(hns);
             return ResponseEntity.ok().body("");
