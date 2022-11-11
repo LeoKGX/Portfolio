@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IAboutMeRepo extends JpaRepository<AboutMe, Long>{
     
-    public AboutMe findByAbout(String about);
+    public AboutMe findBySobre_mi(String about);
 }

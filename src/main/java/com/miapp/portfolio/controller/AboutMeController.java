@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AboutMeController {
-    @Autowired IAboutMeRepo iAboutMeRepo;
+    @Autowired IAboutMeRepo AboutMeRepo;
 
     @GetMapping("/aboutme")
     public List<AboutMe> getAboutMe() {
-        return iAboutMeRepo.findAll();
+        return AboutMeRepo.findAll();
     }
     
     @PutMapping("/crear/aboutme")
     public ResponseEntity<?> crearAboutMe(@RequestBody AboutMe about){
-        iAboutMeRepo.save(about);
+        AboutMeRepo.save(about);
         return ResponseEntity.ok().body("");
     }
     
     @PutMapping ("borrar/acercademi")
     public ResponseEntity<?> borrarAbout(@RequestBody AboutMe about){
-            AboutMe aboutABorrar = iAboutMeRepo.findByAbout(about.getAbout());
-            iAboutMeRepo.delete(aboutABorrar);
+            AboutMe aboutABorrar = AboutMeRepo.findBySobre_mi(about.getAbout());
+            AboutMeRepo.delete(aboutABorrar);
             
             return ResponseEntity.ok().body("");
     }
