@@ -27,4 +27,12 @@ public class ProyectoController {
         
         return ResponseEntity.ok().body("");
     }
+    
+    @PutMapping ("/borrar/proyecto")
+    public ResponseEntity<?> borrarPro (@RequestBody String nombrepro){
+        Proyecto proyectoABorrar = proRepo.findByName(nombrepro);
+        proRepo.delete(proyectoABorrar);
+        
+        return ResponseEntity.ok().body("");
+    }
 }

@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IProyectoRepo extends JpaRepository<Proyecto, Long>{
     
-    
+    public Proyecto findByName(String nombrepro);
 }

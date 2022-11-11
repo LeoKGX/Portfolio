@@ -25,5 +25,11 @@ public class AboutMeController {
         return ResponseEntity.ok().body("");
     }
     
-    
+    @PutMapping("/borrar/acercademi")
+    public ResponseEntity<?> borrarAboutMe(@RequestBody String about){
+        AboutMe aboutABorrar = iAboutMeRepo.findByAboutme(about);
+        iAboutMeRepo.delete(aboutABorrar);
+        
+        return ResponseEntity.ok().body("");
+    }
 }
