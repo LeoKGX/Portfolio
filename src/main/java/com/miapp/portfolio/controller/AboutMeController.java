@@ -25,36 +25,12 @@ public class AboutMeController {
         return ResponseEntity.ok().body("");
     }
     
-    @PutMapping("/borrar/acercademi")
-    public ResponseEntity<?> borrarAboutMe(@RequestBody SimilAboutMe about){
-        AboutMe aboutABorrar = iAboutMeRepo.findByAbout(about.getAbout());
-        iAboutMeRepo.delete(aboutABorrar);
-        
-        return ResponseEntity.ok().body("");
-    }
-    
     @PutMapping ("borrar/acercademi")
-    public ResponseEntity<?> borrarEdu(@RequestBody AboutMe about){
+    public ResponseEntity<?> borrarAbout(@RequestBody AboutMe about){
             AboutMe aboutABorrar = iAboutMeRepo.findByAbout(about.getAbout());
             iAboutMeRepo.delete(about);
             
             return ResponseEntity.ok().body("");
     }
 
-    private static class SimilAboutMe {
-
-        private String about;
-        
-        public SimilAboutMe() {
-        }
-
-        public String getAbout() {
-            return about;
-        }
-
-        public void setAbout(String about) {
-            this.about = about;
-        }
-        
-    }
 }

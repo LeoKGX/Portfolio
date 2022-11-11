@@ -1,7 +1,6 @@
 
 package com.miapp.portfolio.model;
 
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +10,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "proyecto")
-public  class Proyecto implements Serializable{
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+public  class Proyecto{
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     private String name;
