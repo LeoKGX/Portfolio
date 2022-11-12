@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "experiencia_laboral")
@@ -16,7 +17,7 @@ public class XP {
     @Column(name = "nombre_empresa")
     private String nombreEmpresa;
     
-    @Column(name = "puesto")
+    @Column(name = "puesto") @NotNull
     private String puesto;
     
     @Column(name = "fecha_inicio")
