@@ -66,6 +66,13 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter{
     
         http.authorizeRequests()
             .antMatchers("/login").permitAll()
+            .antMatchers("/aboutme").permitAll()
+            .antMatchers("/certificados").permitAll()
+            .antMatchers("/educacion").permitAll()
+            .antMatchers("/skill").permitAll()
+            .antMatchers("/persona").permitAll()
+            .antMatchers("/proyectos").permitAll()
+            .antMatchers("/xp").permitAll()
             .anyRequest().authenticated();
         
         http.addFilterBefore(jwtfilter, UsernamePasswordAuthenticationFilter.class);
