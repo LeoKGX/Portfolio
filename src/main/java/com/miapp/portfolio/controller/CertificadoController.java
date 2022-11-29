@@ -23,7 +23,6 @@ public class CertificadoController {
         return certificadoRepo.findAll();
     }
     
-    
     @PostMapping ("/crear/cert")
     public ResponseEntity<?> crearEdu(@RequestBody Certificado certificado){
         certificadoRepo.save(certificado);

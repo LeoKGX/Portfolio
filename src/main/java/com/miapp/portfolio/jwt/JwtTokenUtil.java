@@ -11,9 +11,8 @@ import io.jsonwebtoken.SignatureException;
 import io.jsonwebtoken.UnsupportedJwtException;
 import java.util.Date;
 import org.springframework.beans.factory.annotation.Value;
- 
 import org.springframework.stereotype.Component;
-
+ 
 
 @Component 
 public class JwtTokenUtil {
@@ -21,7 +20,7 @@ public class JwtTokenUtil {
       
     @Value("jwt.secret")
     private String SECRET_KEY;
-     
+   
     public String generateAccessToken(User user) {
         return Jwts.builder()
                 .setSubject(String.format("%s,%s", user.getId(), user.getEmail()))
