@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+target/classes/com/miapp/portfolio/controller/PersonaController.class
+target/classes/com/miapp/portfolio/model/Persona.class
+target/classes/com/miapp/portfolio/repository/IPersonaRepo.class

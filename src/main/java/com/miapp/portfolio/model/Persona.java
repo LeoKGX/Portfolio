@@ -23,6 +23,7 @@ public class Persona {
     private String ocupation;
     private String location;
     private String phone;
+    private String mail;
     private String sobre_mi;
     private String profile_img;
     private String back_img;
@@ -51,7 +52,13 @@ public class Persona {
         this.back_img = back_img;
     }
     
-    
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
     
     public Long getId() {
         return id;
