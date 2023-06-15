@@ -1,5 +1,5 @@
 # Use the official Amazon Corretto 18 image as the base image
-FROM public.ecr.aws/corretto/corretto:18
+FROM public.ecr.aws/corretto/corretto-18:latest
 
 # Set the working directory
 WORKDIR /app
