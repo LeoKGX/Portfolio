@@ -1,5 +1,5 @@
-# Use the official Amazon Corretto 18 image as the base image
-FROM openjdk:18-jre
+# Use the official openjdk 18 image as the base image
+FROM winamd64/openjdk:18
 
 # Set the working directory
 WORKDIR /app
