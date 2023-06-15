@@ -1,5 +1,5 @@
 # Use a base image with Java 8 installed
-FROM openjdk:8
+FROM openjdk:18
 
 # Set the working directory
 WORKDIR /app
