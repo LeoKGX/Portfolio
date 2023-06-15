@@ -1,5 +1,5 @@
-# Use a base image with Java 8 installed
-FROM openjdk:18
+# Use the official Amazon Corretto 18 image as the base image
+FROM public.ecr.aws/corretto/corretto:18
 
 # Set the working directory
 WORKDIR /app
