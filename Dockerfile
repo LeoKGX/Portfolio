@@ -5,10 +5,10 @@ FROM openjdk:18
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY /target/portfolio-0.0.1-SNAPSHOT.jar /app/portfolio-0.0.1-SNAPSHOT.jar
+COPY /out/artifacts/portfolio_jar/portfolio.jar /app/portfolio.jar
 
 # Expose the port your application is listening on (replace 8080 with your actual port number)
 EXPOSE 8080
 
 # Define the command to run your application
-CMD ["java", "-jar", "/app/portfolio-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "/app/portfolio.jar"]
