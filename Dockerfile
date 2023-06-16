@@ -3,7 +3,7 @@ FROM openjdk:18
 
 WORKDIR /app
 
-COPY ./portfolio.jar /app/portfolio.jar
+COPY ./portfolio_jar/portfolio.jar /app/portfolio.jar
 
 EXPOSE 8080
 
