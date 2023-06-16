@@ -1,23 +1,10 @@
-# Use a base image with Java 8 installed
-FROM ubuntu:latest AS build
+# Use a base image with Java 18 installed
+FROM openjdk:18 AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-18-jdk -y
-COPY . .
+RUN apt-get install -y tzdata
 
-WORKDIR /app
-#RUN mvn dependency:go-offline
+ENV tz America/Buenos_Aires
 
-#COPY src/ /app/src/
-#RUN mvn package
+VOLUME ["/home"]
 
-# Expose the port your application is listening on (replace 8080 with your actual port number)
-EXPOSE 8080
-
-# Copy the JAR file into the container
-COPY ./out/artifacts/portfolio_jar/portfolio.jar /app/portfolio.jar
-
-ENTRYPOINT ["java", "-jar", "portfolio.jar"]
-
-# Define the command to run your application
-#CMD ["java", "-jar", "/app/portfolio.jar"]
+ENTRYPOINT ["java", "-jar", "-Dspring.profiles.active=release", "/home/portfolio.jar"]
