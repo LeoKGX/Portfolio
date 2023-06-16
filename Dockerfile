@@ -17,7 +17,7 @@ EXPOSE 8080
 # Copy the JAR file into the container
 COPY ./out/artifacts/portfolio_jar/portfolio.jar /app/portfolio.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app/portfolio.jar"]
 
 # Define the command to run your application
 #CMD ["java", "-jar", "/app/portfolio.jar"]
