@@ -6,7 +6,7 @@ RUN apt-get install openjdk-18-jdk -y
 COPY . .
 
 WORKDIR /app
-RUN mvn dependency:go-offline
+#RUN mvn dependency:go-offline
 
 #COPY src/ /app/src/
 #RUN mvn package
